@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Woody Home Color Palette */
+    --background: 40 33% 95%;
+    --foreground: 12 29% 15%;
+
+    --card: 40 40% 97%;
+    --card-foreground: 12 29% 15%;
+
+    --popover: 40 40% 97%;
+    --popover-foreground: 12 29% 15%;
+
+    /* Deep Walnut - Primary */
+    --primary: 12 29% 19%;
+    --primary-foreground: 40 33% 95%;
+
+    /* Warm Beige - Secondary */
+    --secondary: 60 56% 91%;
+    --secondary-foreground: 12 29% 19%;
+
+    /* Muted tones */
+    --muted: 35 20% 88%;
+    --muted-foreground: 12 15% 45%;
+
+    /* Burnt Orange - Accent */
+    --accent: 14 90% 40%;
+    --accent-foreground: 40 33% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 30 25% 82%;
+    --input: 30 25% 82%;
+    --ring: 14 90% 40%;
+
+    --radius: 0.5rem;
+
+    /* Custom Colors */
+    --walnut: 12 29% 19%;
+    --walnut-light: 12 25% 30%;
+    --beige: 60 56% 91%;
+    --beige-warm: 40 45% 88%;
+    --orange-burnt: 14 90% 40%;
+    --gold: 43 74% 49%;
+    --cream: 45 67% 96%;
+
+    /* Gradients */
+    --gradient-walnut: linear-gradient(135deg, hsl(12 29% 19%) 0%, hsl(30 35% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(30 35% 28%) 0%, hsl(43 74% 49%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40 40% 97%) 0%, hsl(35 30% 92%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(12 29% 19% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(12 29% 19% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(12 29% 19% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 40 33% 95%;
+    --sidebar-foreground: 12 29% 19%;
+    --sidebar-primary: 12 29% 19%;
+    --sidebar-primary-foreground: 40 33% 95%;
+    --sidebar-accent: 35 20% 88%;
+    --sidebar-accent-foreground: 12 29% 19%;
+    --sidebar-border: 30 25% 82%;
+    --sidebar-ring: 14 90% 40%;
+  }
+
+  .dark {
+    --background: 12 20% 10%;
+    --foreground: 40 33% 95%;
+
+    --card: 12 18% 14%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 12 18% 14%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 40 45% 88%;
+    --primary-foreground: 12 29% 15%;
+
+    --secondary: 12 15% 20%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 12 15% 20%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 14 80% 50%;
+    --accent-foreground: 40 33% 95%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 12 15% 25%;
+    --input: 12 15% 25%;
+    --ring: 14 80% 50%;
+
+    --sidebar-background: 12 20% 10%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 14 80% 50%;
+    --sidebar-primary-foreground: 40 33% 95%;
+    --sidebar-accent: 12 15% 20%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 12 15% 25%;
+    --sidebar-ring: 14 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif KR', serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .font-serif-kr {
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .font-sans-kr {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .gradient-walnut {
+    background: var(--gradient-walnut);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .wood-texture {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .antique-border {
+    @apply border-2 border-primary/20 rounded-lg;
+    box-shadow: inset 0 2px 4px hsl(var(--primary) / 0.05);
+  }
+
+  .gold-accent {
+    @apply border border-[hsl(43_74%_49%)] text-[hsl(43_74%_49%)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
